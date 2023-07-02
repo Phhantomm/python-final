@@ -53,3 +53,30 @@ beautiful soup with html file|
 # print(result)
 # for each in result:
 #     print(each.text)
+
+sqlalchemy
+
+class Book(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    title = db.Column(db.String(80), nullable=False)
+    author = db.Column(db.String(80), nullable=False)
+    price = db.Column(db.Float, nullable=False)
+
+    def __str__(self):
+        return f'სათაური -  {self.title}, ავტორი - {self.author}, ფასი - {self.price}'
+
+
+with app.app_context():
+    db.create_all()
+    # b1 = Book(title='Across the spiderverse', author='galaktion tabidze', price=100)
+    # db.session.add(b1)
+    # db.session.commit()
+    # b7 = Book.query.first()
+    # print(b7)
+    # all = Book.query.all()
+    # b6 = Book.query.get(5)
+    # db.session.delete(b6)
+    # db.session.commit()
+    # idk = Book.query.filter_by(author='ilia chavchavadze').all()
+    # for each in all:
+    #     print(each)
