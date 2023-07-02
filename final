@@ -1,0 +1,55 @@
+# with open('weather.json', 'w') as file:
+#     # file.write(response.text)
+#     json.dump(result, file, indent=4)
+
+# result = json.loads(response.text)
+# print(type(result))
+# with open('weather.json', 'r') as file:
+#     result = json.load(file)
+#     print(result)
+
+^
+|     json and api
+V
+
+Json მოდულიდან შეგვიძლია გამოვიყენოთ ფუნქცია loads(), რომელიც ტექსტურ მონაცემს
+(რომელშიც მოთავსებულია json ობიექტი) გარდაქმნის პითონის dict ობიექტად. შედეგად
+შეგვიძლია, json-ის მონაცემები წავიკითხოთ dict-ის მეშვეობით. ანალოგიურად, არსებობს load()
+ფუნქცია, რომელსაც პარამეტრად გადაეცემა არა სტრიქონი არამედ ფაილი და ფაილში
+არსებულ json ობიექტს გარდაქმნის პითონის ობიექტად (dict).
+პითონში json ობიექტის დაბეჭდვისას, შედეგი იბეჭდება ერთ ხაზზე და json-ის სტრუქტურის
+აღქმა გაძნელებულია. იმისათვის რომ უფრო ლამაზად გამოვიტანოთ ეკრანზე, რაც
+გაგვიადვილებს შემდეგ მასზე მუშაობას, უმჯობესია გამოვიყენოთ dumps() ფუნქცია, სადაც
+პირველ პარამეტრად გადაეცემა json-ის ობიექტი, ხოლო მეორე ატრიბუტად უნდა გადავცეთ
+indent შესაბამისი მნიშვნელობით. მაგ. res_structured = json.dumps(res, indent=4). შედეგად ვიღებთ
+json ფორმატით ჩაწერილ სტრიქონის ობიექტს და ვიზულაურად სტრუქტურირებულია.
+ანალოგიურად, არსებობს dump() ფუნქცია, რომელსაც მეორე პრამეტრად გადაეცემა ფაილის
+დასახელება, და ახდენს ფაილში json ობიექტად ინფორმაციის ჩაწერას. თუ გადაეცემა indent
+პარამეტერი, შედეგი იქნება ვიზუალურად სტრუქტურირებული. გამოიყენება json ფაილის
+შესაქმნელად.
+
+beautiful soup with html file|
+                             V
+# # import os
+# # os.system('pip install bs4')
+# from bs4 import BeautifulSoup
+# with open('index.html', 'r') as file:
+#     content = file.read()
+#
+# # print(content)
+# soup = BeautifulSoup(content, 'html.parser')
+# # print(soup)
+# print(soup.head)
+# print(soup.title.text)
+# print(soup.h2)
+# print(soup.ul.li)
+# print(soup.ul.text)
+# print(soup.ul.attrs)
+# print(soup.ul.attrs['id'])
+# result = soup.find('h2')
+# result = soup.find('ul', {'id': 'list2'})
+# result = soup.find('ul', class_='mylist')
+# result = soup.find_all('h2')
+# print(result)
+# for each in result:
+#     print(each.text)
